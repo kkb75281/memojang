@@ -57,6 +57,20 @@ class Rectangle {
         this.height = height;
         this.width = width;
     }
+
+    // 함수 (재활용가능) : function today() {} or let today = ()=>{} 이런 형식은 아님
+    today() {
+        console.log(`Hello! Today is ${this.day} ${this.month}, ${this.year}`);
+
+        // 함수 안에서는 일반 자바스크립트처럼 사용 (let 선언 가능)
+        let data = {
+            year: this.year,
+            month: `${this.month}`,
+            day: this.day
+        }
+
+        return data;
+    }
 }
 </code></pre>
                         </div>
