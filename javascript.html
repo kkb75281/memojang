@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gyupp's memojang</title>
+
+    <link href="https://webfontworld.github.io/Cafe24Classictype/Cafe24ClassicType.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/javascript.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <h1>memojang</h1>
+    </header>
+    <main id="main" class="main">
+        <div class="left">
+            <div class="memo">
+                node.js ; 터미널 내에서 바로바로 결과 확인 가능<br>
+                https://nodejs.org/ 설치 후 터미널 내 node-v로 버전 체크
+            </div>
+        </div>
+        <div class="right">
+            <nav class="menu">
+                <div class="page">
+                    <div class="btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h4>javascript</h4>
+                </div>
+                <ul class="topic">
+                    <li><a href="#section1">basic</a></li>
+                    <li><a href="#section2">class</a></li>
+                </ul>
+            </nav>
+            <div class="study">
+                <section id="section1" class="section">
+                    <h3>[ basic ]</h3>
+                </section>
+                <section id="section2" class="section">
+                    <h3>[ class ]</h3>
+        
+                    <div class="cont">
+                        <h4># class 선언 (기본형식)</h4>
+                        <div class="code">
+<pre><code class="language-js">// 보통 class명은 대문자로 시작
+class Rectangle {
+    // height;
+    // width;
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+}
+</code></pre>
+                        </div>
+                    </div>
+        
+                    <div class="cont">
+                        <h4># Hosting</h4>
+                        <div class="code">
+<pre><code class="language-js">// 함수는 정의하기 전에 호출 가능하지만, 클래스는 반드시 위에 먼저 선언 후 호출 가능
+const p = new Rectangle();      // 괄호 내 정보 입력하고 저장
+
+class Rectangle {}
+</code></pre>
+                        </div>
+                    </div>
+        
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+</script>
+</html>
