@@ -6,6 +6,7 @@
 
 a {
     text-decoration: none;
+    color: #000;
 }
 
 li {
@@ -62,7 +63,13 @@ pre code.hljs {
     padding: 1vw;
     box-sizing: border-box;
     border-radius: 0 1vw 1vw 0;
-    background-color: rgba(255, 208, 0, 0.6);
+    transition: all 0.3s;
+    /* background-color: rgba(255, 208, 0, 0.6); */
+    background-color: #4461f22f;
+}
+
+.main .left .memo:hover {
+    box-shadow: 5px 5px 30px 3px #ffffff;
 }
 
 .main .right {
@@ -129,10 +136,45 @@ pre code.hljs {
     background-color: #fff;
 }
 
+.menu .topic li {
+    position: relative;
+    transition: all 0.3s;
+    opacity: 0.3;
+}
+
+.menu .topic li::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 1px;
+    border-bottom: 1px solid #000;
+    opacity: 0;
+}
+
+.menu .topic li:hover {
+    opacity: 1;
+}
+
+.menu .topic li:hover::after {
+    opacity: 1;
+    animation: line 0.5s linear;
+}
+
+@keyframes line {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
 .menu .topic li a {
     font-size: 0.9vw;
-    color: #999;
-    transition: all 0.3s;
+    /* color: #999; */
 }
 
 .study {
