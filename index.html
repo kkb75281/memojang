@@ -23,6 +23,9 @@
                 node.js ; 터미널 내에서 바로바로 결과 확인 가능<br>
                 https://nodejs.org/ 설치 후 터미널 내 node-v로 버전 체크
             </div>
+            <div class="memo">
+                console.log()로 객체 속에 무엇이 들어있는지 확인하는 습관
+            </div>
         </div>
         <div class="right">
             <nav class="menu">
@@ -35,23 +38,97 @@
                     <h4>javascript</h4>
                 </div>
                 <ul class="topic">
-                    <li><a href="#section1">addEventListener</a></li>
-                    <li><a href="#section2">class</a></li>
+                    <li><a href="#data">data</a></li>
+                    <li><a href="#function">function</a></li>
+                    <li><a href="#addEventListener">addEventListener</a></li>
+                    <li><a href="#objectReference">object reference</a></li>
+                    <li><a href="#class">class</a></li>
+                    <li><a href="#promise">promise</a></li>
                 </ul>
             </nav>
             <div class="study">
-                <section id="section1" class="section">
-                    <h3>[ addEventListener ]</h3>
+                <section id="data" class="section">
+                    <h3>[ data ]</h3>
 
                     <div class="cont">
-                        <h4># ...</h4>
+                        <h4># 다양한 표현 방법</h4>
                         <div class="code">
-<pre><code class="language-js">...
+<pre><code class="language-js">let a = 1234;
+let b = a * 100;
+let c = 'Hi';
+
+// array (but, console.log(typeof d); => object)
+let d = [1234, b, 'Hi'];
+// d[0] = 1234
+
+//object
+let e = {
+    aa: 1234,
+    bb: aa*100,
+    cc: 'Hi',
+    dd: () => {
+        // blahblah
+    },
+    ee: [
+        4321,
+        'Hello'
+    ]
+}
+// e.cc = 'Hi'
+// e.ee[1] = 'Hello'
 </code></pre>
                         </div>
                     </div>
                 </section>
-                <section id="section2" class="section">
+                <section id="function" class="section">
+                    <h3>[ function ]</h3>
+
+                    <div class="cont">
+                        <h4># 다양한 표현 방법</h4>
+                        <div class="code">
+<pre><code class="language-js">let a = function() {}
+function a() {}
+let a = () => {}
+</code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section id="addEventListener" class="section">
+                    <h3>[ addEventListener ]</h3>
+
+                    <div class="cont">
+                        <h4># 다양한 표현 방법</h4>
+                        <div class="code">
+<pre><code class="language-js">h.onclick = 함수명 or “함수작성”;
+g.setAttribute(”onclick”, “함수()”); // html 상에서 확인 가능
+</code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section id="objectReference" class="section">
+                    <h3>[ object reference ]</h3>
+
+                    <div class="cont">
+                        <h4># 객체 참조</h4>
+                        <div class="code">
+<pre><code class="language-js">// 원본도 같이 바뀜
+let a = [1, 2, 3, 4, 5];
+let b = a;
+b[1] = 10;
+console.log(a);     // [1, 10, 3, 4, 5]
+console.log(b);     // [1, 10, 3, 4, 5]
+
+// b만 바뀜
+let a = [1, 2, 3, 4, 5];
+let b = a;
+b = [1, 2, 3];
+console.log(a);     // [1, 2, 3, 4, 5]
+console.log(b);     // [1, 2, 3]
+</code></pre>
+                        </div>
+                    </div>
+                </section>
+                <section id="class" class="section">
                     <h3>[ class ]</h3>
         
                     <div class="cont">
@@ -92,6 +169,54 @@ class Rectangle {
 const p = new Rectangle();      // 괄호 내 정보 입력하고 저장
 
 class Rectangle {}
+</code></pre>
+                        </div>
+                    </div>
+        
+                </section>
+                <section id="promise" class="section">
+                    <h3>[ promise ] <span>네트워크 호출</span></h3>
+
+                    <div class="desc">
+                        자바스크립트는 코드를 순차적으로 읽어 나감. 하지만 promise를 사용하면 특정 코드가 완료될 때까지 기다리지 않고 바로 다음 코드로 넘어가서 실행함.
+                    </div>
+
+                    <div class="cont">
+                        <h4># promise</h4>
+                        <div class="code">
+<pre><code class="language-js">let a = new Promise(function(resolve) {      //callback function(arguments)
+    // ...
+})
+
+let b = new Promise(function(resolve) {
+    // ...
+});
+  
+a.then(function() {
+    // ...
+});
+
+b.then(function() {
+    // ...
+});
+
+// 순차적으로 실행하고 싶을 경우(a 불러온 후 b 불러오기)
+a.then(function() {
+    // ...
+    b.then(function() {
+        // ...
+    });
+});
+</code></pre>
+                        </div>
+                    </div>
+        
+                    <div class="cont">
+                        <h4># fetchㄴ</h4>
+                        <div class="code">
+<pre><code class="language-js">fetch('url').then((data) => {
+    console.log(data);
+});
 </code></pre>
                         </div>
                     </div>

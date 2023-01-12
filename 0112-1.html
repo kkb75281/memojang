@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5vw;
+        }
+    </style>
+</head>
+<body>
+    <h1>promise</h1>
+</body>
+<script>
+    // movie 인기순위
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=540588f0940b5e6bdcf873b4608b86f0&language=en-US&page=1')
+    .then((data) => console.log(data));
+
+    // unsplash 이미지 랜덤
+    fetch('https://api.unsplash.com/photos/random?client_id=jW8UKjJxJ8WDQL7iVnxoQWyaRiLVgBbu-pH9Me1slhM&count=30')
+    .then((data) => console.log(data));
+
+    // youtube playlist 검색결과
+    fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=[playlist]&key=AIzaSyD6QGqJEKoA6i3vi-8HlZO2Y6S0UoFTKb4&maxResults=30&type=video')
+    .then((data) => console.log(data));
+</script>
+</html>
+
+
