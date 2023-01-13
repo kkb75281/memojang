@@ -59,7 +59,6 @@ let c = 'Hi';
 
 // array (but, console.log(typeof d); => object)
 let d = [1234, b, 'Hi'];
-// d[0] = 1234
 
 //object
 let e = {
@@ -74,10 +73,14 @@ let e = {
         'Hello'
     ]
 }
-// e.cc = 'Hi'
-// e.ee[1] = 'Hello'
 </code></pre>
                         </div>
+                    </div>
+
+                    <div class="desc1">
+                        d[0] = 1234;<br>
+                        e.cc = 'Hi';<br>
+                        e.ee[1] = 'Hello';
                     </div>
                 </section>
                 <section id="function" class="section">
@@ -86,9 +89,19 @@ let e = {
                     <div class="cont">
                         <h4># 다양한 표현 방법</h4>
                         <div class="code">
-<pre><code class="language-js">let a = function() {}
-function a() {}
-let a = () => {}
+<pre><code class="language-js">let fun = () => 1234;
+
+let fun = ()=>{
+    return 1234;
+}
+
+let fun = function (){
+    return 1234
+}
+
+function fun(){
+    return 1234;
+}
 </code></pre>
                         </div>
                     </div>
@@ -99,8 +112,11 @@ let a = () => {}
                     <div class="cont">
                         <h4># 다양한 표현 방법</h4>
                         <div class="code">
-<pre><code class="language-js">h.onclick = 함수명 or “함수작성”;
-g.setAttribute(”onclick”, “함수()”); // html 상에서 확인 가능
+<pre><code class="language-js">function func = () => {};
+
+h.onmousemove = func or “() => {}”;
+h.addEventListener("mousemove",func);
+h.setAttribute("onmousemove", "func()");      // html 상에서 확인 가능
 </code></pre>
                         </div>
                     </div>
@@ -186,49 +202,91 @@ class Rectangle {}
                     <div class="cont">
                         <h4># promise</h4>
                         <div class="code">
-<pre><code class="language-js">let promise = () => new Promise((resolve, reject) => {
-    let a = 1 + 1;
-  
-    if(a == 2) {
-        resolve('success');     // a가 2라면 resolve 호출
+<pre><code class="language-js">let v1 = 1;
+let v2 = 10;
+
+let promise = new Promise((then, err) => {
+    let a = v1 + v2;
+
+    if (a == 2) {
+        then('success');
     } else {
-        reject('failed');       // a가 2가 아니라면 reject 호출
+        // then('failed');
+        err('failed');
     }
 })
 
-// .then('성공시 호출','실패시 호출') 을 통해 처리 결과 나타냄
-promise().then((message) => {
-    console.log('This is in the then ' +  message)
-}, (error) => {
-    console.log('This is in the then ' +  error)
-})
-</code></pre>
-                        </div>
-                        <div class="desc1">
-                            This is in the then success
-                        </div>
-
-                        <div class="code">
-<pre><code class="language-js">let promise = () => new Promise((resolve, reject) => {
-    let a = 1 + 5;
-  
-    if(a == 2) {
-        resolve('success');     // a가 2라면 resolve 호출
-    } else {
-        reject('failed');       // a가 2가 아니라면 reject 호출
-    }
-})
-
-// .catch() 비동기 처리 or then 메서드 실행 중 에러가 발생할 시 호출
-promise().then((message) => {
-    console.log('This is in the then ' + message);
-}).catch((message) => {
-    console.log('This is in the catch ' + message);
+promise.then((message) => {
+    console.log('This is in the then ' + message)
+}, err => {
+    console.log('-err-');
+    console.log('This is in the then ' + err)
 });
 </code></pre>
                         </div>
                         <div class="desc1">
+                            -err-<br>
+                            This is in the then success
+                        </div>
+
+                        <div class="code">
+<pre><code class="language-js">let v1 = 1;
+let v2 = 10;
+
+let promise = new Promise((then, err) => {
+    let a = v1 + v2;
+
+    if (a == 2) {
+        then('success');
+    } else {
+        // then('failed');
+        err('failed');
+    }
+})
+
+
+promise().then((message) => {
+    console.log('This is in the then ' + message)
+}).catch(err=>{
+    console.log('-catch-', err);
+    console.log('This is in the catch ' + err)
+});
+</code></pre>
+                        </div>
+                        <div class="desc1">
+                            -catch-<br>
                             This is in the catch failed
+                        </div>
+                    </div>
+
+
+                    <div class="cont">
+                        <h4># promise chaining</h4>
+                        <div class="code">
+<pre><code class="language-js">const promise1 = () => new Promise(resolve => setTimeout(() => resolve(1), 1000))
+const promise2 = () => new Promise(resolve => setTimeout(() => resolve(5), 5000))
+const promise3 = () => new Promise(resolve => setTimeout(() => resolve(3), 3000))
+
+promise1().then(result => {
+    console.log(result)
+    return promise2()
+}).then(result => {
+    console.log(result)
+    return promise3()
+}).then(result => {
+    console.log(result)
+})
+
+// promise1().then(result => {
+//     promise2().then()
+//     return 1234
+// }).then(result => {
+//     console.log(result)
+//     return promise3()
+// }).then(result => {
+//     console.log(result)
+// })
+</code></pre>
                         </div>
                     </div>
         
@@ -241,6 +299,8 @@ promise().then((message) => {
 </code></pre>
                         </div>
                     </div>
+
+
 
                     <div class="cont">
                         <h4># async & await</h4>

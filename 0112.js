@@ -77,7 +77,6 @@
 //     }
 // })
 
-
 // promise(23).then((message) => {
 //     console.log('This is in the then ' + message)
 // }, err => {
@@ -106,7 +105,6 @@ promise.then((message) => {
     console.log('This is in the then ' + err)
 });
 
-
 // promise().then((message) => {
 //     console.log('This is in the then ' + message)
 // }).catch(err=>{
@@ -114,9 +112,7 @@ promise.then((message) => {
 //     console.log('This is in the then ' + err)
 // });
 
-// const promise1 = () => new Promise(resolve => setTimeout(() => resolve(1), 1000))
-// const promise2 = () => new Promise(resolve => setTimeout(() => resolve(5), 5000))
-// const promise3 = () => new Promise(resolve => setTimeout(() => resolve(3), 3000))
+
 
 
 // let fun = () => 1234;
@@ -126,21 +122,29 @@ promise.then((message) => {
 // let fun = function (){
 //     return 1234
 // }
-
 // function fun(){
 //     return 1234;
 // }
 
 
-// promise1().then(result => {
-//     console.log(result)
-//     return promise2()
-// }).then(result => {
-//     console.log(result)
-//     return promise3()
-// }).then(result => {
-//     console.log(result)
-// })
+
+const promise1 = () => new Promise(resolve => setTimeout(() => resolve(1), 1000))
+const promise2 = () => new Promise(resolve => setTimeout(() => resolve(5), 5000))
+const promise3 = () => new Promise(resolve => setTimeout(() => resolve(3), 3000))
+
+promise1().then(result => {
+    console.log(result)
+    return promise2()
+}).then(result => {
+    console.log(result)
+    return promise3()
+}).then(result => {
+    console.log(result)
+})
+
+
+
+
 
 // function fetchUser() {
 //     var url = 'https://jsonplaceholder.typicode.com/users/1'
@@ -160,6 +164,8 @@ promise.then((message) => {
 //     var user = await fetchUser();
 //     if (user.id === 1) {
 //         var todo = await fetchTodo();
-//         console.log(todo.title); // delectus aut autem
+//         console.log(todo.title);
 //     }
 // }
+
+
