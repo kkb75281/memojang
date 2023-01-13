@@ -179,6 +179,8 @@ class Rectangle {}
 
                     <div class="desc">
                         자바스크립트는 코드를 순차적으로 읽어 나감. 하지만 promise를 사용하면 특정 코드가 완료될 때까지 기다리지 않고 바로 다음 코드로 넘어가서 실행함.<br>
+                        promise를 꼭 함수로 표현할 필요는 없음. 다만 let a = new Promise() 식으로 표현하면 웹브라우저를 실행할때마다 계속해서 호출이 됨<br>
+                        ex. 게임 아이템 구매 : 클릭했을 때 구매과정이 이루어져야 함
                     </div>
 
                     <div class="cont">
@@ -188,30 +190,45 @@ class Rectangle {}
     let a = 1 + 1;
   
     if(a == 2) {
-        resolve('success');
+        resolve('success');     // a가 2라면 resolve 호출
     } else {
-        reject('failed');
+        reject('failed');       // a가 2가 아니라면 reject 호출
     }
 })
 
+// .then('성공시 호출','실패시 호출') 을 통해 처리 결과 나타냄
 promise().then((message) => {
     console.log('This is in the then ' +  message)
 }, (error) => {
     console.log('This is in the then ' +  error)
 })
-  
-// promise().then((message) => {
-//     console.log('This is in the then ' + message);
-// }).catch((message) => {
-//     console.log('This is in the catch ' + message);
-// });
 </code></pre>
                         </div>
-
                         <div class="desc1">
-                            a가 2라면 resolve 호출, 아니라면 reject 호출<br>
-                            처리된 정보를 .then('성공시 호출할 함수', '실패시 호출할 함수')을 통해 처리 결과 또는 에러 메세지 처리<br>
-                            .catch() 비동기 처리 혹은 then 메소드 실행 중 발생한 에러(예외)가 발생하면 호출
+                            This is in the then success
+                        </div>
+
+                        <div class="code">
+<pre><code class="language-js">let promise = () => new Promise((resolve, reject) => {
+    let a = 1 + 5;
+  
+    if(a == 2) {
+        resolve('success');     // a가 2라면 resolve 호출
+    } else {
+        reject('failed');       // a가 2가 아니라면 reject 호출
+    }
+})
+
+// .catch() 비동기 처리 or then 메서드 실행 중 에러가 발생할 시 호출
+promise().then((message) => {
+    console.log('This is in the then ' + message);
+}).catch((message) => {
+    console.log('This is in the catch ' + message);
+});
+</code></pre>
+                        </div>
+                        <div class="desc1">
+                            This is in the catch failed
                         </div>
                     </div>
         
@@ -221,6 +238,30 @@ promise().then((message) => {
 <pre><code class="language-js">fetch('url').then((data) => {
     console.log(data);
 });
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="cont">
+                        <h4># async & await</h4>
+                        <div class="code">
+<pre><code class="language-js">async function 함수명() {
+    await 비동기_처리_메서드_명();
+}
+</code></pre>
+                        </div>
+                        <div class="code">
+<pre><code class="language-js">function fetchItems() {
+    return new Promise(function(resolve, reject) {
+        var items = [1,2,3];
+        resolve(items);
+    });
+}
+  
+async function logItems() {
+    var resultItems = await fetchItems();
+    console.log(resultItems); // [1,2,3]
+}
 </code></pre>
                         </div>
                     </div>

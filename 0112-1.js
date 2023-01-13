@@ -44,22 +44,122 @@
 //   }
 // })
 
-// promise().then((message) => {
-//   console.log('This is in the then ' +  message)
-// }, (error) => {
-//   console.log('This is in the then ' +  error)
+
+
+
+
+// let promise = (v1 = 1, v2 = 1) => {
+
+//     let promiseArg = (then, err) => {
+//         let a = v1 + v2;
+
+//         if (a == 2) {
+//             then('success');
+//         } else {
+//             // then('failed');
+//             err('failed');
+//         }
+//     }
+
+//     let p = new Promise(promiseArg)
+
+//     return p;
+// }
+
+// let promise = (v1 = 1, v2 = 1) => new Promise((then, err) => {
+//     let a = v1 + v2;
+
+//     if (a == 2) {
+//         then('success');
+//     } else {
+//         // then('failed');
+//         err('failed');
+//     }
 // })
 
-const promise1 = () => new Promise(resolve => setTimeout(() => resolve(1), 1000))
-const promise2 = () => new Promise(resolve => setTimeout(() => resolve(5), 5000))
-const promise3 = () => new Promise(resolve => setTimeout(() => resolve(3), 3000))
 
-promise1().then(result => {
-    console.log(result)
-    return promise2()
-}).then(result => {
-    console.log(result)
-    return promise3()
-}).then(result => {
-    console.log(result)
+// promise(23).then((message) => {
+//     console.log('This is in the then ' + message)
+// }, err => {
+//     console.log('-catch-');
+//     console.log('This is in the then ' + err)
+// });
+
+let v1 = 1;
+let v2 = 10;
+
+let promise = new Promise((then, err) => {
+    let a = v1 + v2;
+
+    if (a == 2) {
+        then('success');
+    } else {
+        // then('failed');
+        err('failed');
+    }
 })
+
+promise.then((message) => {
+    console.log('This is in the then ' + message)
+}, err => {
+    console.log('-catch-');
+    console.log('This is in the then ' + err)
+});
+
+
+// promise().then((message) => {
+//     console.log('This is in the then ' + message)
+// }).catch(err=>{
+//     console.log('-catch-', err);
+//     console.log('This is in the then ' + err)
+// });
+
+// const promise1 = () => new Promise(resolve => setTimeout(() => resolve(1), 1000))
+// const promise2 = () => new Promise(resolve => setTimeout(() => resolve(5), 5000))
+// const promise3 = () => new Promise(resolve => setTimeout(() => resolve(3), 3000))
+
+
+// let fun = () => 1234;
+// let fun = ()=>{
+//     return 1234;
+// }
+// let fun = function (){
+//     return 1234
+// }
+
+// function fun(){
+//     return 1234;
+// }
+
+
+// promise1().then(result => {
+//     console.log(result)
+//     return promise2()
+// }).then(result => {
+//     console.log(result)
+//     return promise3()
+// }).then(result => {
+//     console.log(result)
+// })
+
+// function fetchUser() {
+//     var url = 'https://jsonplaceholder.typicode.com/users/1'
+//     return fetch(url).then(function (response) {
+//         return response.json();
+//     });
+// }
+
+// function fetchTodo() {
+//     var url = 'https://jsonplaceholder.typicode.com/todos/1';
+//     return fetch(url).then(function (response) {
+//         return response.json();
+//     });
+// }
+
+// async function logTodoTitle() {
+//     var user = await fetchUser();
+//     if (user.id === 1) {
+//         var todo = await fetchTodo();
+//         console.log(todo.title); // delectus aut autem
+//     }
+// }

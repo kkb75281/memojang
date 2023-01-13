@@ -29,6 +29,7 @@ pre code.hljs {
     padding: 1.5vw !important;
     border-radius: 1vw !important;
     font-family: 'Cafe24ClassicType' !important;
+    font-size: 0.8vw !important;
 }
 
 .header {
@@ -68,6 +69,7 @@ pre code.hljs {
     transition: all 0.3s;
     /* background-color: rgba(255, 208, 0, 0.6); */
     background-color: #4461f22f;
+    font-size: 1vw;
     user-select: none;
     cursor: move;
 }
@@ -228,11 +230,13 @@ pre code.hljs {
     padding: 1vw;
     margin-bottom: 1vw;
     border-radius: 1vw;
+    font-size: 1vw;
 }
 
 .section .desc1 {
     background-color: #aaa;
     color: #fff;
+    font-size: 1vw;
     padding: 1vw;
     margin-bottom: 1vw;
     border-radius: 1vw;
@@ -240,6 +244,10 @@ pre code.hljs {
 
 .section .cont {
     margin-bottom: 1vw;
+}
+
+.section .cont h4 {
+    font-size: 0.8vw;
 }
 
 .section .cont p {
