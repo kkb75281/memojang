@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animated circle</title>
+
+    <style>
+        button {
+            position: fixed;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: rgb(147, 164, 202);
+            position: fixed;
+            transform: translate(-50%, -50%);
+            transition: all 2s;
+        }
+
+        .msg {
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="showCircle(50, 50, 100)">click here</button>
+</body>
+
+<script>
+    let div = null;
+
+    function handler() {
+        div.classList.add('msg');
+        div.append('HELLO');
+    }
+
+    function showCircle(cx, cy, radius) {
+        if(div !== null) {
+            div.remove();
+        }
+
+        div = document.createElement('div');
+        div.style.width = 0;
+        div.style.height = 0;
+        div.style.opacity = 0;
+        div.style.left = cx + '%';
+        div.style.top = cy + '%';
+        div.className = 'circle';
+        document.body.append(div);
+        div.addEventListener('transitionend', handler);
+            
+        setTimeout(() => {
+            div.style.width = radius * 2 + 'px';
+            div.style.height = radius * 2 + 'px';
+            div.style.opacity = 100;
+        }, 0);
+    }
+</script>
+
+</html>

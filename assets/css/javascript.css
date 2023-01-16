@@ -32,6 +32,24 @@ pre code.hljs {
     font-size: 0.8vw !important;
 }
 
+.top {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    bottom: -3vw;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 2s;
+}
+
 .header {
     padding-bottom: 3vw;
     text-align: center;
@@ -59,7 +77,77 @@ pre code.hljs {
     flex-wrap: wrap;
 }
 
-.main .left .memo {
+.leftMenu {
+    width: 100%;
+}
+
+.leftMenu ul li {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.5);
+    margin-bottom: 1vw;
+    padding: 0.3vw 0 0.3vw 1vw;
+    font-size: 1vw;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.leftMenu ul li::before {
+    position: absolute;
+    content: '';
+    width: 20%;
+    height: 100%;
+    background-color: #fff;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    transition: all 0.3s;
+    /* opacity: 0.3; */
+    z-index: -1;
+}
+
+.leftMenu ul li:first-child:before {
+    background-color: rgb(153, 100, 100);
+}
+
+.leftMenu ul li:nth-child(2):before {
+    background-color: rgb(100, 153, 134);
+}
+
+.leftMenu ul li:nth-child(3):before {
+    background-color: rgb(119, 100, 153);
+}
+
+.leftMenu ul li:last-child:before {
+    background-color: rgb(153, 137, 100);
+}
+
+.leftMenu ul li a {
+    color: #999;
+}
+
+.leftMenu ul li.active {
+    font-weight: 600;
+}
+
+.leftMenu ul li.active a {
+    color: #000;
+}
+
+.leftMenu ul li:hover {
+    /* font-size: 1.2vw; */
+}
+
+.leftMenu ul li:hover:before {
+    width: 100%;
+}
+
+.leftMenu ul li:hover a {
+    color: #000;
+}
+
+/* .main .left .memo {
     width: 100%;
     height: 100%;
     padding: 1vw;
@@ -67,7 +155,6 @@ pre code.hljs {
     box-sizing: border-box;
     border-radius: 0 1vw 1vw 0;
     transition: all 0.3s;
-    /* background-color: rgba(255, 208, 0, 0.6); */
     background-color: #4461f22f;
     font-size: 1vw;
     user-select: none;
@@ -80,38 +167,38 @@ pre code.hljs {
 
 .main .left .memo:hover {
     box-shadow: 5px 5px 30px 3px #ffffff;
-}
+} */
 
 .main .right {
     width: 80%;
     height: 100%;
 }
 
-.menu {
+.rightMenu {
     background-color: rgba(253, 253, 253, 0.8);
     border-radius: 1vw 1vw 0 0;
 }
 
-.menu ul li {
+.rightMenu ul li {
     display: inline-block;
     margin-right: 1vw;
 }
 
-.menu ul li a:hover {
+.rightMenu ul li a:hover {
     color: #333;
 }
 
-.menu .page {
+.rightMenu .page {
     display: flex;
 }
 
-.menu .page .btn {
+.rightMenu .page .btn {
     display: flex;
     align-items: center;
     padding: 0 1vw 0 2vw;
 }
 
-.menu .page .btn span {
+.rightMenu .page .btn span {
     width: 0.8vw;
     height: 0.8vw;
     margin-right: 0.5vw;
@@ -120,39 +207,39 @@ pre code.hljs {
     transition: all 0.3s;
 }
 
-.menu .page .btn span:hover {
+.rightMenu .page .btn span:hover {
     scale: 0.8;
 }
 
-.menu .page .btn span:first-child {
+.rightMenu .page .btn span:first-child {
     background-color: rgba(255, 100, 100, 0.8);
 }
 
-.menu .page .btn span:nth-child(2) {
+.rightMenu .page .btn span:nth-child(2) {
     background-color: rgba(255, 232, 100, 0.8);
 }
 
-.menu .page .btn span:last-child {
+.rightMenu .page .btn span:last-child {
     background-color: rgba(100, 222, 100, 0.8);
 }
 
-.menu .page h4 {
+.rightMenu .page h4 {
     font-size: 1vw;
     padding: 1vw;
 }
 
-.menu .topic {
+.rightMenu .topic {
     padding: 1vw 2vw;
     background-color: #fff;
 }
 
-.menu .topic li {
+.rightMenu .topic li {
     position: relative;
     transition: all 0.3s;
     opacity: 0.3;
 }
 
-.menu .topic li::after {
+.rightMenu .topic li::after {
     position: absolute;
     content: '';
     left: 50%;
@@ -164,11 +251,11 @@ pre code.hljs {
     opacity: 0;
 }
 
-.menu .topic li:hover {
+.rightMenu .topic li:hover {
     opacity: 1;
 }
 
-.menu .topic li:hover::after {
+.rightMenu .topic li:hover::after {
     opacity: 1;
     animation: line 0.5s linear;
 }
@@ -182,7 +269,7 @@ pre code.hljs {
     }
 }
 
-.menu .topic li a {
+.rightMenu .topic li a {
     font-size: 0.9vw;
 }
 
@@ -242,12 +329,18 @@ pre code.hljs {
     border-radius: 1vw;
 }
 
+.section i {
+    font-style: normal;
+    background-color: #4461f22f;
+}
+
 .section .cont {
     margin-bottom: 1vw;
 }
 
 .section .cont h4 {
     font-size: 0.8vw;
+    margin-bottom: 0.5vw;
 }
 
 .section .cont p {
