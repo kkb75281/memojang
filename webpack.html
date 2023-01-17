@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gyupp's memojang</title>
+
+    <link href="https://webfontworld.github.io/ChosunGu/ChosunGu.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
+</head>
+
+<body class="grid">
+    <header id="header" class="header">
+        <h1>memojang</h1>
+    </header>
+    <main id="main" class="main">
+        <div class="left">
+            <!-- <div class="memo">
+                node.js ; 터미널 내에서 바로바로 결과 확인 가능<br>
+                https://nodejs.org/ 설치 후 터미널 내 node-v로 버전 체크
+            </div>
+            <div class="memo">
+                console.log()로 객체 속에 무엇이 들어있는지 확인하는 습관
+            </div> -->
+            <nav class="leftMenu">
+                <ul>
+                    <li><a href="./html.html">html</a></li>
+                    <li><a href="./css.html">css</a></li>
+                    <li><a href="./index.html">javascript</a></li>
+                    <li class="active"><a href="./webpack.html">webpack</a></li>
+                    <li><a href="./memo.html">memo</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="right">
+            <nav class="rightMenu">
+                <div class="page">
+                    <div class="btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h4>webpack</h4>
+                </div>
+                <ul class="topic">
+                    <li><a href="#webpack">webpack</a></li>
+                </ul>
+            </nav>
+            <div class="study">
+                <section id="webpack" class="section">
+                    <h3>[ webpack ]</h3>
+
+                    <div class="cont">
+                        <h4># webpack</h4>
+                        <div class="desc">
+                            여러개 파일을 하나의 파일로 합쳐주는 모듈 번들러(Module bundler)
+                        </div>
+                        <h4># server</h4>
+                        <div class="desc">
+                            서버는 정보를 가지고 오고 파일을 삭제 수정하고 다 가능<br><br>
+                            ex. 프로그램을 잘 못 다운 받았다가 컴퓨터 해킹되는 경우
+                        </div>
+                        <div class="desc">
+                            요청을 받으면 데이터를 보내주는 기계
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="top">TOP</div>
+    </main>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+
+    // 마우스 스크롤 내리면 top 버튼 올라오게
+    let goToTop = document.querySelector(".top");
+    
+    window.onwheel = function (e) {
+        // console.log(e);
+        
+        if(e.deltaY > 0){
+            goToTop.style.bottom = '3vw';
+        } else {
+            goToTop.style.bottom = '-3vw';
+        }
+    }
+
+    goToTop.addEventListener("click", () => {
+        // window.scrollTo({ top:0, behavior:'smooth' });
+        window.scrollTo(0,0);
+        goToTop.style.bottom = '-3vw';
+    });
+
+</script>
+</html>

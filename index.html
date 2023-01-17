@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gyupp's memojang</title>
 
-    <link href="https://webfontworld.github.io/Cafe24Classictype/Cafe24ClassicType.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/ChosunGu/ChosunGu.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/javascript.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
 </head>
 
-<body>
+<body class="grid">
     <header id="header" class="header">
         <h1>memojang</h1>
     </header>
@@ -30,7 +30,8 @@
                 <ul>
                     <li><a href="./html.html">html</a></li>
                     <li><a href="./css.html">css</a></li>
-                    <li class="active"><a href="./index.html">javascript</a></li>
+                    <li><a href="./index.html">javascript</a></li>
+                    <li class="active"><a href="./webpack.html">webpack</a></li>
                     <li><a href="./memo.html">memo</a></li>
                 </ul>
             </nav>
@@ -54,7 +55,6 @@
                     <li><a href="#promise">promise</a></li>
                     <li><a href="#getpost">get/post</a></li>
                     <li><a href="#browserserver">web browser/server</a></li>
-                    <li><a href="#webpack">webpack</a></li>
                 </ul>
             </nav>
             <div class="study">
@@ -69,7 +69,7 @@ let b = a * 100;
 let c = 'Hi';
 
 // array (but, console.log(typeof d); => object)
-let d = [1234, b, 'Hi'];
+let d = [1234, b, 'Hi'];    // d[0] = 1234;
 
 //object
 let e = {
@@ -84,14 +84,10 @@ let e = {
         'Hello'
     ]
 }
+// e.cc = 'Hi';
+// e.ee[1] = 'Hello';
 </code></pre>
                         </div>
-                    </div>
-
-                    <div class="desc1">
-                        d[0] = 1234;<br>
-                        e.cc = 'Hi';<br>
-                        e.ee[1] = 'Hello';
                     </div>
                 </section>
                 <section id="function" class="section">
@@ -214,8 +210,8 @@ console.log(today);
                     <h3>[ promise ]</h3>
 
                     <div class="desc">
-                        자바스크립트는 코드를 순차적으로 읽어 나감. 하지만 promise를 사용하면 특정 코드가 완료될 때까지 기다리지 않고 바로 다음 코드로 넘어가서 실행함.<br>
-                        promise를 꼭 함수로 표현할 필요는 없음. 다만 let a = new Promise() 식으로 표현하면 웹브라우저를 실행할때마다 계속해서 호출이 됨<br>
+                        자바스크립트는 코드를 순차적으로 읽어 나감. 하지만 promise를 사용하면 특정 코드가 완료될 때까지 기다리지 않고 바로 다음 코드로 넘어가서 실행함.<br><br>
+                        promise를 꼭 함수로 표현할 필요는 없음. 다만 let a = new Promise() 식으로 표현하면 웹브라우저를 실행할때마다 계속해서 호출이 됨<br><br>
                         ex. 게임 아이템 구매 : 클릭했을 때 구매과정이 이루어져야 함
                     </div>
 
@@ -236,34 +232,18 @@ let promise = new Promise((then, err) => {
     }
 })
 
+////////////////////////////////////////// err
+
 promise.then((message) => {
     console.log('This is in the then ' + message)
 }, err => {
     console.log('-err-');
     console.log('This is in the then ' + err)
 });
-</code></pre>
-                        </div>
-                        <div class="desc1">
-                            -err-<br>
-                            This is in the then failed
-                        </div>
+// -err-
+// This is in the then failed
 
-                        <div class="code">
-<pre><code class="language-js">let v1 = 1;
-let v2 = 10;
-
-let promise = new Promise((then, err) => {
-    let a = v1 + v2;
-
-    if (a == 2) {
-        then('success');
-    } else {
-        // then('failed');
-        err('failed');
-    }
-})
-
+//////////////////////////////////////// catch
 
 promise().then((message) => {
     console.log('This is in the then ' + message)
@@ -271,11 +251,9 @@ promise().then((message) => {
     console.log('-catch-', err);
     console.log('This is in the catch ' + err)
 });
+// -catch-
+// This is in the catch failed
 </code></pre>
-                        </div>
-                        <div class="desc1">
-                            -catch-<br>
-                            This is in the catch failed
                         </div>
                     </div>
 
@@ -283,8 +261,8 @@ promise().then((message) => {
                         <h4># try ... catch</h4>
 
                         <div class="desc">
-                            보통 스크립트에서 에러가 발생하면 실행이 중단되고 콘솔에 에러가 뜨지만 try ... catch 문을 사용하면 스크립트가 죽지 않고 에러에 해당하는 코드를 실행 할 수 있음.<br>
-                            실행 가능한 코드(유효한 자바스크립트 코드)에만 실행, 중괄호 짝이 안 맞는 것처럼 코드가 문법적으로 잘못된 경우에는 실행되지 않음<br>
+                            보통 스크립트에서 에러가 발생하면 실행이 중단되고 콘솔에 에러가 뜨지만 try ... catch 문을 사용하면 스크립트가 죽지 않고 에러에 해당하는 코드를 실행 할 수 있음.<br><br>
+                            실행 가능한 코드(유효한 자바스크립트 코드)에만 실행, 중괄호 짝이 안 맞는 것처럼 코드가 문법적으로 잘못된 경우에는 실행되지 않음<br><br>
                             .catch(f)는 promise.then(null, f)과 동일하게 작동
                         </div>
 
@@ -398,8 +376,8 @@ async function logTodoTitle() {
                     <div class="cont">
                         <h4># get</h4>
                         <div class="desc">
-                            url 상에 정보를 나타내고 그에 맞는 결과를 호출해줌<br>
-                            직접적으로 눈에 보이기 때문에 보안에 취약<br>
+                            url 상에 정보를 나타내고 그에 맞는 결과를 호출해줌<br><br>
+                            직접적으로 눈에 보이기 때문에 보안에 취약<br><br>
                             ex. 검색이나 게시판 페이지 이동 (form - input - method: get)
                         </div>
                         <div class="desc">
@@ -407,7 +385,7 @@ async function logTodoTitle() {
                         </div>
                         <h4># post</h4>
                         <div class="desc">
-                            보낸 정보가 눈에 보이지는 않지만 서버로 전송이 됨<br>
+                            보낸 정보가 눈에 보이지는 않지만 서버로 전송이 됨<br><br>
                             ex. 로그인 (form - input - method: post)
                         </div>
                         <div class="code">
@@ -436,35 +414,16 @@ http.createServer(function(request, response){
                     <div class="cont">
                         <h4># web browser</h4>
                         <div class="desc">
-                            웹브라우저 밖은 바꾸지 못함. 브라우저 안에서만 모든게 가능<br>
+                            웹브라우저 밖은 바꾸지 못함. 브라우저 안에서만 모든게 가능<br><br>
                             ex. 버튼을 눌렀다고 내 pc에 파일을 삭제하진 못함
                         </div>
                         <h4># server</h4>
                         <div class="desc">
-                            서버는 정보를 가지고 오고 파일을 삭제 수정하고 다 가능<br>
+                            서버는 정보를 가지고 오고 파일을 삭제 수정하고 다 가능<br><br>
                             ex. 프로그램을 잘 못 다운 받았다가 컴퓨터 해킹되는 경우
                         </div>
                         <div class="desc">
-                            요청을 받으면 데이터를 보내주는 기계<br>
-                        </div>
-                    </div>
-                </section>
-                <section id="webpack" class="section">
-                    <h3>[ webpack ]</h3>
-
-                    <div class="cont">
-                        <h4># web browser</h4>
-                        <div class="desc">
-                            웹브라우저 밖은 바꾸지 못함. 브라우저 안에서만 모든게 가능<br>
-                            ex. 버튼을 눌렀다고 내 pc에 파일을 삭제하진 못함
-                        </div>
-                        <h4># server</h4>
-                        <div class="desc">
-                            서버는 정보를 가지고 오고 파일을 삭제 수정하고 다 가능<br>
-                            ex. 프로그램을 잘 못 다운 받았다가 컴퓨터 해킹되는 경우
-                        </div>
-                        <div class="desc">
-                            요청을 받으면 데이터를 보내주는 기계<br>
+                            요청을 받으면 데이터를 보내주는 기계
                         </div>
                     </div>
                 </section>
@@ -479,12 +438,22 @@ http.createServer(function(request, response){
 
     // 마우스 스크롤 내리면 top 버튼 올라오게
     let goToTop = document.querySelector(".top");
-
-    goToTop.addEventListener("wheel", () => {
-        if(e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-            console.log('스크롤 내린다 ~')
+    
+    window.onwheel = function (e) {
+        // console.log(e);
+        
+        if(e.deltaY > 0){
             goToTop.style.bottom = '3vw';
+        } else {
+            goToTop.style.bottom = '-3vw';
         }
+    }
+
+    goToTop.addEventListener("click", () => {
+        // window.scrollTo({ top:0, behavior:'smooth' });
+        window.scrollTo(0,0);
+        goToTop.style.bottom = '-3vw';
     });
+
 </script>
 </html>
