@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gyupp's memojang</title>
 
-    <link href="https://webfontworld.github.io/ChosunGu/ChosunGu.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/kohi/KOHINanum.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
@@ -18,52 +18,62 @@
         <h1>memojang</h1>
     </header>
     <main id="main" class="main">
-        <div class="left">
-            <!-- <div class="memo">
-                node.js ; 터미널 내에서 바로바로 결과 확인 가능<br>
-                https://nodejs.org/ 설치 후 터미널 내 node-v로 버전 체크
-            </div>
-            <div class="memo">
-                console.log()로 객체 속에 무엇이 들어있는지 확인하는 습관
-            </div> -->
-            <nav class="leftMenu">
-                <ul>
-                    <li><a href="./html.html">html</a></li>
-                    <li><a href="./css.html">css</a></li>
-                    <li class="active"><a href="./index.html">javascript</a></li>
-                    <li><a href="./webpack.html">webpack</a></li>
-                    <li><a href="./memo.html">memo</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="right">
-            <nav class="rightMenu">
-                <div class="page">
-                    <div class="btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <h4>javascript</h4>
+        <div class="container">
+            <div class="left">
+                <!-- <div class="memo">
+                    node.js ; 터미널 내에서 바로바로 결과 확인 가능<br>
+                    https://nodejs.org/ 설치 후 터미널 내 node-v로 버전 체크
                 </div>
-                <ul class="topic">
-                    <li><a href="#data">data</a></li>
-                    <li><a href="#function">function</a></li>
-                    <li><a href="#addEventListener">addEventListener</a></li>
-                    <li><a href="#objectReference">object reference</a></li>
-                    <li><a href="#class">class</a></li>
-                    <li><a href="#promise">promise</a></li>
-                    <li><a href="#getpost">get/post</a></li>
-                    <li><a href="#browserserver">web browser/server</a></li>
-                </ul>
-            </nav>
-            <div class="study">
-                <section id="data" class="section">
-                    <h3>[ data ]</h3>
+                <div class="memo">
+                    console.log()로 객체 속에 무엇이 들어있는지 확인하는 습관
+                </div> -->
+                <nav class="leftMenu">
+                    <ul>
+                        <li><a href="./html.html">html</a></li>
+                        <li><a href="./css.html">css</a></li>
+                        <li class="active"><a href="./index.html">javascript</a></li>
+                        <li><a href="./webpack.html">webpack</a></li>
+                        <li><a href="./memo.html">memo</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right">
+                <nav class="rightMenu">
+                    <div class="page">
+                        <div class="btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <h4>javascript</h4>
+                    </div>
+                    <ul class="topic">
+                        <li><a href="#data">data</a></li>
+                        <li><a href="#function">function</a></li>
+                        <li><a href="#addEventListener">addEventListener</a></li>
+                        <li><a href="#objectReference">object reference</a></li>
+                        <li><a href="#class">class</a></li>
+                        <li><a href="#promise">promise</a></li>
+                        <li><a href="#getpost">get/post</a></li>
+                        <li><a href="#browserserver">web browser/server</a></li>
 
-                    <div class="cont">
-                        <h4># 다양한 표현 방법</h4>
-                        <div class="code">
+                        <!-- <li id="data">data</li>
+                        <li id="function">function</li>
+                        <li id="addEventListener">addEventListener</li>
+                        <li id="objectReference">object reference</li>
+                        <li id="class">class</li>
+                        <li id="promise">promise</li>
+                        <li id="getpost">get/post</li>
+                        <li id="browserserver">web browser/server</li> -->
+                    </ul>
+                </nav>
+                <div class="study">
+                    <section id="data" class="section active">
+                        <h3>[ data ]</h3>
+    
+                        <div class="cont">
+                            <h4># 다양한 표현 방법</h4>
+                            <div class="code">
 <pre><code class="language-js">let a = 1234;
 let b = a * 100;
 let c = 'Hi';
@@ -87,15 +97,15 @@ let e = {
 // e.cc = 'Hi';
 // e.ee[1] = 'Hello';
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section id="function" class="section">
-                    <h3>[ function ]</h3>
-
-                    <div class="cont">
-                        <h4># 다양한 표현 방법</h4>
-                        <div class="code">
+                    </section>
+                    <section id="function" class="section">
+                        <h3>[ function ]</h3>
+    
+                        <div class="cont">
+                            <h4># 다양한 표현 방법</h4>
+                            <div class="code">
 <pre><code class="language-js">let fun = () => 1234;
 
 let fun = ()=>{
@@ -110,30 +120,30 @@ function fun(){
     return 1234;
 }
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section id="addEventListener" class="section">
-                    <h3>[ addEventListener ]</h3>
-
-                    <div class="cont">
-                        <h4># 다양한 표현 방법</h4>
-                        <div class="code">
+                    </section>
+                    <section id="addEventListener" class="section">
+                        <h3>[ addEventListener ]</h3>
+    
+                        <div class="cont">
+                            <h4># 다양한 표현 방법</h4>
+                            <div class="code">
 <pre><code class="language-js">function func = () => {};
 
 h.onmousemove = func or “() => {}”;
 h.addEventListener("mousemove",func);
 h.setAttribute("onmousemove", "func()");      // html 상에서 확인 가능
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section id="objectReference" class="section">
-                    <h3>[ object reference ]</h3>
-
-                    <div class="cont">
-                        <h4># 객체 참조</h4>
-                        <div class="code">
+                    </section>
+                    <section id="objectReference" class="section">
+                        <h3>[ object reference ]</h3>
+    
+                        <div class="cont">
+                            <h4># 객체 참조</h4>
+                            <div class="code">
 <pre><code class="language-js">// 원본도 같이 바뀜
 let a = [1, 2, 3, 4, 5];
 let b = a;
@@ -148,19 +158,19 @@ b = [1, 2, 3];
 console.log(a);     // [1, 2, 3, 4, 5]
 console.log(b);     // [1, 2, 3]
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section id="class" class="section">
-                    <h3>[ class ]</h3>
-
-                    <div class="desc">
-                        함수는 정의하기 전에 호출 가능하지만, 클래스는 반드시 위에 먼저 선언 후 호출 가능
-                    </div>
-        
-                    <div class="cont">
-                        <h4># class 선언 (기본형식)</h4>
-                        <div class="code">
+                    </section>
+                    <section id="class" class="section">
+                        <h3>[ class ]</h3>
+    
+                        <div class="desc">
+                            함수는 정의하기 전에 호출 가능하지만, 클래스는 반드시 위에 먼저 선언 후 호출 가능
+                        </div>
+            
+                        <div class="cont">
+                            <h4># class 선언 (기본형식)</h4>
+                            <div class="code">
 <pre><code class="language-js">// 보통 class명은 대문자로 시작
 class DateCard {
     // 여기서도 마찬가지로 let 안씀
@@ -192,32 +202,57 @@ class DateCard {
     }
 }
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-        
-                    <div class="cont">
-                        <h4># Hosting</h4>
-                        <div class="code">
+            
+                        <div class="cont">
+                            <h4># Hosting</h4>
+                            <div class="code">
 <pre><code class="language-js">let info = new DateCard(2023, 'jan', 11);      // 괄호 내 정보 입력하고 저장
 let today = info.today();
 console.log(today);
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-        
-                </section>
-                <section id="promise" class="section">
-                    <h3>[ promise ]</h3>
+            
+                    </section>
+                    <section id="promise" class="section">
+                        <h3>[ promise ]</h3>
+    
+                        <div class="desc">
+                            자바스크립트는 코드를 순차적으로 읽어 나감. 하지만 promise를 사용하면 특정 코드가 완료될 때까지 기다리지 않고 바로 다음 코드로 넘어가서 실행함.<br><br>
+                            promise를 꼭 함수로 표현할 필요는 없음. 다만 let a = new Promise() 식으로 표현하면 웹브라우저를 실행할때마다 계속해서 호출이 됨<br><br>
+                            ex. 게임 아이템 구매 : 클릭했을 때 구매과정이 이루어져야 함
+                        </div>
+    
+                        <div class="cont">
+                            <h4># promise</h4>
+                            <div class="code">
+<pre><code>// 01. 실행할 때마다 계속 호출
+let p = new Promise(resolved => {
+    console.log('hello');
+    resolved('Finished!')
+})
 
-                    <div class="desc">
-                        자바스크립트는 코드를 순차적으로 읽어 나감. 하지만 promise를 사용하면 특정 코드가 완료될 때까지 기다리지 않고 바로 다음 코드로 넘어가서 실행함.<br><br>
-                        promise를 꼭 함수로 표현할 필요는 없음. 다만 let a = new Promise() 식으로 표현하면 웹브라우저를 실행할때마다 계속해서 호출이 됨<br><br>
-                        ex. 게임 아이템 구매 : 클릭했을 때 구매과정이 이루어져야 함
-                    </div>
+// then을 통해 결과를 전송
+p.then(r => {
+    console.log(r);
+})
 
-                    <div class="cont">
-                        <h4># promise</h4>
-                        <div class="code">
+
+
+// 02. 함수를 통해 필요할때만 promise를 호출할 수 있음
+let promiseFunction = () => new Promise(resolved => {
+    console.log('hello promise function!');
+    resolved('Resolved!')
+});
+
+promiseFunction().then(pf => {
+    console.log(pf);
+})
+</code></pre>
+                            </div>
+                            <div class="code">
 <pre><code class="language-js">let v1 = 1;
 let v2 = 10;
 
@@ -254,19 +289,19 @@ promise().then((message) => {
 // -catch-
 // This is in the catch failed
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="cont">
-                        <h4># try ... catch</h4>
-
-                        <div class="desc">
-                            보통 스크립트에서 에러가 발생하면 실행이 중단되고 콘솔에 에러가 뜨지만 try ... catch 문을 사용하면 스크립트가 죽지 않고 에러에 해당하는 코드를 실행 할 수 있음.<br><br>
-                            실행 가능한 코드(유효한 자바스크립트 코드)에만 실행, 중괄호 짝이 안 맞는 것처럼 코드가 문법적으로 잘못된 경우에는 실행되지 않음<br><br>
-                            .catch(f)는 promise.then(null, f)과 동일하게 작동
-                        </div>
-
-                        <div class="code">
+    
+                        <div class="cont">
+                            <h4># try ... catch</h4>
+    
+                            <div class="desc">
+                                보통 스크립트에서 에러가 발생하면 실행이 중단되고 콘솔에 에러가 뜨지만 try ... catch 문을 사용하면 스크립트가 죽지 않고 에러에 해당하는 코드를 실행 할 수 있음.<br><br>
+                                실행 가능한 코드(유효한 자바스크립트 코드)에만 실행, 중괄호 짝이 안 맞는 것처럼 코드가 문법적으로 잘못된 경우에는 실행되지 않음<br><br>
+                                .catch(f)는 promise.then(null, f)과 동일하게 작동
+                            </div>
+    
+                            <div class="code">
 <pre><code class="language-js">try {
     // 코드
     // 1. 코드 실행
@@ -278,26 +313,26 @@ promise().then((message) => {
     // 항상 실행
 }
 </code></pre>
-                        </div>
-                        <div class="code">
+                            </div>
+                            <div class="code">
 <pre><code class="language-js">function fetchItems() {
     return new Promise(function(resolve, reject) {
         var items = [1,2,3];
         resolve(items);
     });
 }
-  
+    
 async function logItems() {
     var resultItems = await fetchItems();
     console.log(resultItems); // [1,2,3]
 }
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="cont">
-                        <h4># promise chaining</h4>
-                        <div class="code">
+    
+                        <div class="cont">
+                            <h4># promise chaining</h4>
+                            <div class="code">
 <pre><code class="language-js">const promise1 = () => new Promise(resolve => setTimeout(() => resolve(1), 1000))
 const promise2 = () => new Promise(resolve => setTimeout(() => resolve(5), 5000))
 const promise3 = () => new Promise(resolve => setTimeout(() => resolve(3), 3000))
@@ -322,28 +357,18 @@ promise1().then(result => {
 //     console.log(result)
 // })
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-        
-                    <div class="cont">
-                        <h4># fetch</h4>
-                        <div class="code">
+            
+                        <div class="cont">
+                            <h4># fetch</h4>
+                            <div class="code">
 <pre><code class="language-js">fetch('url').then((data) => {
     console.log(data);
 });
 </code></pre>
-                        </div>
-                    </div>
-
-                    <div class="cont">
-                        <h4># async & await</h4>
-                        <div class="code">
-<pre><code class="language-js">async function 함수명() {
-    await 비동기_처리_메서드_명();
-}
-</code></pre>
-                        </div>
-                        <div class="code">
+                            </div>
+                            <div class="code">
 <pre><code class="language-js">function fetchUser() {
     var url = 'https://jsonplaceholder.typicode.com/users/1'
     return fetch(url).then(function (response) {
@@ -366,29 +391,39 @@ async function logTodoTitle() {
     }
 }
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-        
-                </section>
-                <section id="getpost" class="section">
-                    <h3>[ get / post ]</h3>
-
-                    <div class="cont">
-                        <h4># get</h4>
-                        <div class="desc">
-                            url 상에 정보를 나타내고 그에 맞는 결과를 호출해줌<br><br>
-                            직접적으로 눈에 보이기 때문에 보안에 취약<br><br>
-                            ex. 검색이나 게시판 페이지 이동 (form - input - method: get)
+    
+                        <div class="cont">
+                            <h4># async & await</h4>
+                            <div class="code">
+<pre><code class="language-js">async function 함수명() {
+    await 비동기_처리_메서드_명();
+}
+</code></pre>
+                            </div>
                         </div>
-                        <div class="desc">
-                            https://www.google.com/search?<i>q=서버...&aqs=chrome...</i>
-                        </div>
-                        <h4># post</h4>
-                        <div class="desc">
-                            보낸 정보가 눈에 보이지는 않지만 서버로 전송이 됨<br><br>
-                            ex. 로그인 (form - input - method: post)
-                        </div>
-                        <div class="code">
+            
+                    </section>
+                    <section id="getpost" class="section">
+                        <h3>[ get / post ]</h3>
+    
+                        <div class="cont">
+                            <h4># get</h4>
+                            <div class="desc">
+                                url 상에 정보를 나타내고 그에 맞는 결과를 호출해줌<br><br>
+                                직접적으로 눈에 보이기 때문에 보안에 취약<br><br>
+                                ex. 검색이나 게시판 페이지 이동 (form - input - method: get)
+                            </div>
+                            <div class="desc">
+                                https://www.google.com/search?<i>q=서버...&aqs=chrome...</i>
+                            </div>
+                            <h4># post</h4>
+                            <div class="desc">
+                                보낸 정보가 눈에 보이지는 않지만 서버로 전송이 됨<br><br>
+                                ex. 로그인 (form - input - method: post)
+                            </div>
+                            <div class="code">
 <pre><code class="language-js">// http모듈을 추출
 var http = require('http');
 
@@ -405,36 +440,39 @@ http.createServer(function(request, response){
     console.log('Server Running at http://127.0.0.1:52273');
 });
 </code></pre>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section id="browserserver" class="section">
-                    <h3>[ web browser / server ]</h3>
-
-                    <div class="cont">
-                        <h4># web browser</h4>
-                        <div class="desc">
-                            웹브라우저 밖은 바꾸지 못함. 브라우저 안에서만 모든게 가능<br><br>
-                            ex. 버튼을 눌렀다고 내 pc에 파일을 삭제하진 못함
+                    </section>
+                    <section id="browserserver" class="section">
+                        <h3>[ web browser / server ]</h3>
+    
+                        <div class="cont">
+                            <h4># web browser</h4>
+                            <div class="desc">
+                                웹브라우저 밖은 바꾸지 못함. 브라우저 안에서만 모든게 가능<br><br>
+                                ex. 버튼을 눌렀다고 내 pc에 파일을 삭제하진 못함
+                            </div>
+                            <h4># server</h4>
+                            <div class="desc">
+                                서버는 정보를 가지고 오고 파일을 삭제 수정하고 다 가능<br><br>
+                                ex. 프로그램을 잘 못 다운 받았다가 컴퓨터 해킹되는 경우
+                            </div>
+                            <div class="desc">
+                                요청을 받으면 데이터를 보내주는 기계
+                            </div>
                         </div>
-                        <h4># server</h4>
-                        <div class="desc">
-                            서버는 정보를 가지고 오고 파일을 삭제 수정하고 다 가능<br><br>
-                            ex. 프로그램을 잘 못 다운 받았다가 컴퓨터 해킹되는 경우
-                        </div>
-                        <div class="desc">
-                            요청을 받으면 데이터를 보내주는 기계
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
+            <div class="top">TOP</div>
         </div>
-        <div class="top">TOP</div>
     </main>
 </body>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 <script>
     hljs.highlightAll();
+
+
 
     // 마우스 스크롤 내리면 top 버튼 올라오게
     let goToTop = document.querySelector(".top");
@@ -454,6 +492,26 @@ http.createServer(function(request, response){
         window.scrollTo(0,0);
         goToTop.style.bottom = '-3vw';
     });
+
+
+
+    // 소메뉴 클릭했을때 active 추가
+    let clickMenu = document.querySelectorAll(".topic li");
+    let showCont = document.querySelectorAll("section");
+
+
+    console.log(clickMenu[0].id);
+    console.log(showCont[0].id);
+
+
+    // clickMenu[0].addEventListener("click", () => {
+    //     let menu = document.getElementsByTagName('section')[0].id;
+    //     showCont.forEach((e) => {
+    //         e.classList.remove("active")
+    //     })
+    //     menu.classList.add("active");
+    // })
+
 
 </script>
 </html>

@@ -19,7 +19,7 @@ li {
 
 body {
     padding: 3vw;
-    font-family: 'ChosunGu';
+    font-family: 'KOHINanum';
     font-weight: 300;
     color: #333;
     background-color: #dcdcdc;
@@ -37,7 +37,7 @@ body {
 pre code.hljs {
     padding: 1.5vw !important;
     border-radius: 1vw !important;
-    font-family: 'ChosunGu' !important;
+    font-family: 'KOHINanum' !important;
     font-size: 0.8vw !important;
 }
 
@@ -73,6 +73,14 @@ pre code.hljs {
 }
 
 .main {
+    /* display: flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box; */
+}
+
+.container {
+    width: 100%;
+    padding: 0 10vw;
     display: flex;
     flex-wrap: nowrap;
     box-sizing: border-box;
@@ -84,6 +92,13 @@ pre code.hljs {
     margin-right: 2%;
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.main .right {
+    width: 80%;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .leftMenu {
@@ -97,7 +112,6 @@ pre code.hljs {
     background-color: rgba(255, 255, 255, 0.5);
     margin-bottom: 1vw;
     padding: 0.3vw 0 0.3vw 1vw;
-    font-size: 1vw;
     transition: all 0.3s;
     cursor: pointer;
 }
@@ -137,7 +151,9 @@ pre code.hljs {
 }
 
 .leftMenu ul li a {
+    display: block;
     color: #999;
+    font-size: 0.8vw;
 }
 
 .leftMenu ul li.active {
@@ -182,11 +198,6 @@ pre code.hljs {
     box-shadow: 5px 5px 30px 3px #ffffff;
 } */
 
-.main .right {
-    width: 80%;
-    height: 100%;
-}
-
 .rightMenu {
     background-color: rgba(253, 253, 253, 0.8);
     border-radius: 1vw 1vw 0 0;
@@ -195,6 +206,7 @@ pre code.hljs {
 .rightMenu ul li {
     display: inline-block;
     margin-right: 1vw;
+    cursor: pointer;
 }
 
 .rightMenu ul li a:hover {
@@ -302,7 +314,12 @@ pre code.hljs {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 2vw;
     transition: all 0.3s;
+    /* display: none; */
 }
+
+/* .section.active {
+    display: block;
+} */
 
 .section:last-child {
     margin-bottom: 0;
