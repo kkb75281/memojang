@@ -56,15 +56,17 @@
                     <section id="cooperation" class="section">
                         <h3>[ cooperation 협업하기 ]</h3>
                         <div class="desc" style="background-color: #4461f21b;">
-                            install extensions | Git Graph, Github Pull Requests and Issues
+                            <span>install extensions</span>
+                            Git Graph, Github Pull Requests and Issues
                         </div>
 
                         <div class="cont">
                             <h4># fork (상대방 repositories를 내 repositories에 추가)</h4>
                             <div class="desc">
+                                <span>Github</span>
                                 github - 협업 하려는 repositories - 오른쪽 상단 fork - Create a new fork - Create fork
                             </div>
-
+                            
                             <h4># git clone</h4>
                             <div class="desc">
                                 가져온 repositories를 내 pc에 git clone 하기<br><br>
@@ -72,18 +74,40 @@
                                 terminal - 추가할 위치로 가기 - git clone "git HTTPS or SSH"
                             </div>
 
+                            <h4># 수정하기 전 pull (당겨오기)</h4>
+                            <div class="desc">
+                                <span>VSCode</span>
+                                VSCode 사이드에 source control - ... - Remote - Add Remote - 원본 repository 검색 후 추가<br>
+                                ... - Pull, Push - Pull from - 당겨올 repository 선택
+                            </div>
+
                             <h4># New pull request (수정 후 검토 요청하기)</h4>
                             <div class="desc">
+                                <span>Github</span>
                                 Pull requests - New pull request - compare across forks - head repository를 내 repository로 설정 - Create pull request
+                            </div>
+                            <div class="desc">
+                                <span>VSCode</span>
+                                Pull requests - Create pull request - Create
+                            </div>
+                            <div class="desc">
+                                검토 중 변경사항이 있을 경우 내 repository에 commit, push 까지 하면 pull 에 자동 반영
                             </div>
                             
                             <h4># Confirm request (요청 확인하기)</h4>
                             <div class="desc">
                                 VSCode 사이드에 github - 새로고침 - 요청내역 확인 가능
                             </div>
+                            <div class="desc">
+                                Checkout 으로 기능 구현 확인해 볼 수 있음
+                            </div>
+                            <div class="desc">
+                                코드별로 + 버튼을 누르면 comment 추가 가능
+                            </div>
 
                             <h4># Git Graph (git log)</h4>
                             <div class="desc">
+                                <span>VSCode</span>
                                 VSCode 사이드에 source control - View Git Graph - 그동안 commit, push한 내역 확인 가능
                             </div>
                             <div class="desc">

@@ -299,7 +299,8 @@ promise().then((message) => {
                             <div class="desc">
                                 보통 스크립트에서 에러가 발생하면 실행이 중단되고 콘솔에 에러가 뜨지만 try ... catch 문을 사용하면 스크립트가 죽지 않고 에러에 해당하는 코드를 실행 할 수 있음.<br><br>
                                 실행 가능한 코드(유효한 자바스크립트 코드)에만 실행, 중괄호 짝이 안 맞는 것처럼 코드가 문법적으로 잘못된 경우에는 실행되지 않음<br><br>
-                                .catch(f)는 promise.then(null, f)과 동일하게 작동
+                                .catch(f)는 promise.then(null, f)과 동일하게 작동<br><br>
+                                의도된 오류를 잡는데 쓰임(ex. 같은 아이디를 적었을 경우 > 알림창을 띄운다)
                             </div>
     
                             <div class="code">
@@ -484,14 +485,14 @@ http.createServer(function(request, response){
         if(e.deltaY > 0){
             goToTop.style.bottom = '3vw';
         } else {
-            goToTop.style.bottom = '-3vw';
+            goToTop.style.bottom = '-5vw';
         }
     }
 
     goToTop.addEventListener("click", () => {
         // window.scrollTo({ top:0, behavior:'smooth' });
         window.scrollTo(0,0);
-        goToTop.style.bottom = '-3vw';
+        goToTop.style.bottom = '-5vw';
     });
 
 

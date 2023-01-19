@@ -43,14 +43,15 @@ pre code.hljs {
 
 .top {
     position: fixed;
-    width: 50px;
-    height: 50px;
-    left: 50%;
-    bottom: -3vw;
+    width: 3vw;
+    height: 3vw;
+    right: 3vw;
+    bottom: -5vw;
     transform: translateX(-50%);
     border-radius: 50%;
     background-color: #8794d3bd;
     font-weight: 500;
+    font-size: 0.8vw;
     text-align: center;
     display: flex;
     align-items: center;
@@ -144,6 +145,10 @@ pre code.hljs {
 
 .leftMenu ul li:nth-child(4):before {
     background-color: rgb(131, 153, 100);
+}
+
+.leftMenu ul li:nth-child(5):before {
+    background-color: rgb(205, 198, 143);
 }
 
 .leftMenu ul li:last-child:before {
@@ -344,11 +349,23 @@ pre code.hljs {
 }
 
 .section .desc {
+    position: relative;
     background-color: #eee;
     padding: 1vw;
     margin-bottom: 1vw;
     border-radius: 1vw;
     font-size: 0.8vw;
+}
+
+.section .desc span {
+    position: absolute;
+    top: 0;
+    left: 1vw;
+    font-size: 0.5vw;
+    padding: 0 0.5vw;
+    border-radius: 0 0 5px 5px;
+    background-color: #666;
+    color: #dcdcdc;
 }
 
 .section .desc1 {
