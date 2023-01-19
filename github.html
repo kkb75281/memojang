@@ -32,8 +32,8 @@
                         <li><a href="./html.html">html</a></li>
                         <li><a href="./css.html">css</a></li>
                         <li><a href="./index.html">javascript</a></li>
-                        <li class="active"><a href="./webpack.html">webpack</a></li>
-                        <li><a href="./github.html">github</a></li>
+                        <li><a href="./webpack.html">webpack</a></li>
+                        <li class="active"><a href="./github.html">github</a></li>
                         <li><a href="./memo.html">memo</a></li>
                     </ul>
                 </nav>
@@ -46,28 +46,48 @@
                             <span></span>
                             <span></span>
                         </div>
-                        <h4>webpack</h4>
+                        <h4>github</h4>
                     </div>
                     <ul class="topic">
-                        <li><a href="#webpack">webpack</a></li>
+                        <li><a href="#cooperation">cooperation</a></li>
                     </ul>
                 </nav>
                 <div class="study">
-                    <section id="webpack" class="section">
-                        <h3>[ webpack ]</h3>
+                    <section id="cooperation" class="section">
+                        <h3>[ cooperation 협업하기 ]</h3>
+                        <div class="desc" style="background-color: #4461f21b;">
+                            install extensions | Git Graph, Github Pull Requests and Issues
+                        </div>
 
                         <div class="cont">
-                            <h4># webpack</h4>
+                            <h4># fork (상대방 repositories를 내 repositories에 추가)</h4>
                             <div class="desc">
-                                여러개 파일을 하나의 파일로 합쳐주는 모듈 번들러(Module bundler)
+                                github - 협업 하려는 repositories - 오른쪽 상단 fork - Create a new fork - Create fork
                             </div>
-                            <h4># server</h4>
+
+                            <h4># git clone</h4>
                             <div class="desc">
-                                서버는 정보를 가지고 오고 파일을 삭제 수정하고 다 가능<br><br>
-                                ex. 프로그램을 잘 못 다운 받았다가 컴퓨터 해킹되는 경우
+                                가져온 repositories를 내 pc에 git clone 하기<br><br>
+                                ** git clone 방법<br>
+                                terminal - 추가할 위치로 가기 - git clone "git HTTPS or SSH"
+                            </div>
+
+                            <h4># New pull request (수정 후 검토 요청하기)</h4>
+                            <div class="desc">
+                                Pull requests - New pull request - compare across forks - head repository를 내 repository로 설정 - Create pull request
+                            </div>
+                            
+                            <h4># Confirm request (요청 확인하기)</h4>
+                            <div class="desc">
+                                VSCode 사이드에 github - 새로고침 - 요청내역 확인 가능
+                            </div>
+
+                            <h4># Git Graph (git log)</h4>
+                            <div class="desc">
+                                VSCode 사이드에 source control - View Git Graph - 그동안 commit, push한 내역 확인 가능
                             </div>
                             <div class="desc">
-                                요청을 받으면 데이터를 보내주는 기계
+                                돌아가고 싶은 해당 log 우클릭 - Checkout... - 그때의 상태로 돌아갈 수 있음
                             </div>
                         </div>
                     </section>
