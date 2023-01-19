@@ -33,3 +33,27 @@ data.map((e, i) => {
 
 let arr3 = [...arr, ...arr2];
 console.log(arr3);
+
+
+
+
+// const fn = async () => {
+//     try {
+//         const res = await fetch(
+//             'url',
+//         )
+
+//         return await res.json()
+//     } catch (error) {
+//         console.error(error)
+//         throw error;
+//     }
+// }
+
+
+// const fn1 = async () => {
+//     const res = await fetch(
+//         'url',
+//     )
+//     await res.json()
+// }
