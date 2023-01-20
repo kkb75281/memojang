@@ -31,7 +31,18 @@ body {
 }
 
 .code {
+    position: relative;
     margin: 0.5vw 0;
+}
+
+.code .type {
+    position: absolute;
+    top: 0;
+    right: 2vw;
+    font-size: 0.7vw;
+    padding: 0 0.5vw;
+    border-radius: 0 0 5px 5px;
+    background-color: #999;
 }
 
 pre code.hljs {
@@ -151,6 +162,10 @@ pre code.hljs {
     background-color: rgb(205, 198, 143);
 }
 
+.leftMenu ul li:nth-child(6):before {
+    background-color: rgb(181, 138, 185);
+}
+
 .leftMenu ul li:last-child:before {
     background-color: rgb(153, 137, 100);
 }
@@ -212,6 +227,7 @@ pre code.hljs {
     display: inline-block;
     margin-right: 1vw;
     cursor: pointer;
+    font-size: 1vw;
 }
 
 .rightMenu ul li a:hover {
@@ -319,12 +335,12 @@ pre code.hljs {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 2vw;
     transition: all 0.3s;
-    /* display: none; */
+    display: none;
 }
 
-/* .section.active {
+.section.active {
     display: block;
-} */
+}
 
 .section:last-child {
     margin-bottom: 0;
@@ -338,7 +354,7 @@ pre code.hljs {
     display: flex;
     align-items: center;
     font-size: 1vw;
-    padding: 1vw 0;
+    padding: 0.5vw 0;
 }
 
 .section h3 span {
@@ -388,7 +404,7 @@ pre code.hljs {
 
 .section .cont h4 {
     font-size: 0.8vw;
-    margin-bottom: 0.5vw;
+    margin: 1vw 0 0.5vw 0;
 }
 
 .section .cont p {

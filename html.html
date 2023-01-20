@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gyupp's memojang</title>
+
+    <link href="https://webfontworld.github.io/kohi/KOHINanum.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
+</head>
+
+<body class="grid">
+    <header id="header" class="header">
+        <h1>memojang</h1>
+    </header>
+    <main id="main" class="main">
+        <div class="container">
+            <div class="left">
+                <nav class="leftMenu">
+                    <ul>
+                        <li class="active"><a href="./html.html">html</a></li>
+                        <li><a href="./css.html">css</a></li>
+                        <li><a href="./index.html">javascript</a></li>
+                        <li><a href="./vue.html">vue</a></li>
+                        <li><a href="./github.html">github</a></li>
+                        <li><a href="./programmers.html">programmers</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right">
+                <nav class="rightMenu">
+                    <div class="page">
+                        <div class="btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <h4>html</h4>
+                    </div>
+                    <ul class="topic">
+                        <li mydata="install">Pug</li>
+                    </ul>
+                </nav>
+                <div class="study">
+                    <section id="install" class="section active">
+                        <h3>[ Pug ]</h3>
+    
+                        <div class="cont">
+                            <h4># what?</h4>
+                            <div class="desc">
+                                템플릿 엔진으로 HTML 을 PUG 문법으로 작성하면 HTML 로 바꿔주는 기능을 함
+                            </div>
+
+                            <h4># install</h4>
+                            <div class="code">
+                                <span class="type">terminal</span>
+<pre><code class="language-js">$ npm install pug</code></pre>
+                            </div>
+
+                            <h4># how?</h4>
+                            <div class="code">
+                                <span class="type">Pug</span>
+<pre><code class="language-ruby">doctype html
+html(lang='en')
+    head
+    title Pug
+    script(type='text/javascript').
+        foo = true;
+        bar = function () {};
+        if (foo) {
+            bar(1 + 5)
+        }
+    body
+    h1 Pug - node template engine
+    #container.col
+        p You are amazing
+        p
+        | Pug is a terse and simple
+        | templating language with a
+        | strong focus on performance
+        | and powerful features.
+</code></pre>
+                            </div>
+                            <div class="desc">
+                                script처럼 다른 언어 사용시 뒤에 . 추가
+                            </div>
+                            <div class="code">
+                                <span class="type">Html</span>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Pug&lt;/title&gt;
+        &lt;script type="text/javascript"&gt;
+            foo = true;
+            bar = function () {};
+            if (foo) {
+            bar(1 + 5)
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Pug - node template engine&lt;/h1&gt;
+        &lt;div id="container" class="col"&gt;
+            &lt;p&gt;You are amazing&lt;/p&gt;
+            &lt;p&gt;
+            Pug is a terse and simple
+            templating language with a
+            strong focus on performance
+            and powerful features.
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="top">TOP</div>
+        </div>
+    </main>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="./assets/js/common.js"></script>
+<script>
+    hljs.highlightAll();
+</script>
+</html>

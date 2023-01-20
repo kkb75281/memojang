@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gyupp's memojang</title>
+
+    <link href="https://webfontworld.github.io/kohi/KOHINanum.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
+</head>
+
+<body class="grid">
+    <header id="header" class="header">
+        <h1>memojang</h1>
+    </header>
+    <main id="main" class="main">
+        <div class="container">
+            <div class="left">
+                <nav class="leftMenu">
+                    <ul>
+                        <li><a href="./html.html">html</a></li>
+                        <li class="active"><a href="./css.html">css</a></li>
+                        <li><a href="./index.html">javascript</a></li>
+                        <li><a href="./vue.html">vue</a></li>
+                        <li><a href="./github.html">github</a></li>
+                        <li><a href="./programmers.html">programmers</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right">
+                <nav class="rightMenu">
+                    <div class="page">
+                        <div class="btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <h4>css</h4>
+                    </div>
+                    <ul class="topic">
+                        <li mydata="install">less</li>
+                    </ul>
+                </nav>
+                <div class="study">
+                    <section id="install" class="section active">
+                        <h3>[ less ]</h3>
+    
+                        <div class="cont">
+                            <h4># what?</h4>
+                            <div class="desc">
+                                CSS에 Script의 능력(변수, 함수, 연산, 중첩, 스코프등등)을 덧붙여 확장한 언어
+                            </div>
+
+                            <h4># install</h4>
+                            <div class="code">
+                                <span class="type">terminal</span>
+<pre><code class="language-js">$ npm install -g less</code></pre>
+                            </div>
+                            <div class="code">
+                                <span class="type">script</span>
+<pre><code class="language-js">&lt;link rel="stylesheet/less" type="text/css" href="styles.less" /&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/less" &gt;&lt;/script&gt;
+</code></pre>
+                            </div>
+
+                            <h4># variable (변수)</h4>
+                            <div class="code">
+                                <span class="type">css</span>
+<pre><code class="language-css">@color: #4D926F; 
+
+#header { 
+    color: @color; 
+} 
+
+h2 { 
+    color: @color; 
+}
+</code></pre>
+                            </div>
+
+                            <h4># Mixins (믹스인)</h4>
+                            <div class="code">
+                                <span class="type">css</span>
+<pre><code class="language-css">.rounded-corners (@radius: 5px) { 
+    border-radius: @radius; 
+    -webkit-border-radius: @radius; 
+    -moz-border-radius: @radius; 
+} 
+#header { 
+    .rounded-corners; 
+} 
+#footer { 
+    .rounded-corners(10px); 
+}
+</code></pre>
+                            </div>
+
+                            <h4># Nesting (중첩)</h4>
+                            <div class="code">
+                                <span class="type">css</span>
+<pre><code class="language-css">#header { 
+	h1 { 
+      font-size: 26px; 
+      font-weight: bold; 
+    } 
+	p { 
+      font-size: 12px; 
+      a { 
+        text-decoration: none; 
+        &:hover { 
+          border-width: 1px 
+        } 
+      } 
+    } 
+}
+</code></pre>
+                            </div>
+
+                            <h4># function & operation (함수&연산)</h4>
+                            <div class="code">
+                                <span class="type">css</span>
+<pre><code class="language-css">@the-border: 1px; 
+@base-color: #111; 
+@red: #842210; 
+#header { 
+    color: @base-color * 3; 
+    border-left: @the-border; 
+    border-right: @the-border * 2; 
+} 
+#footer { 
+    color: @base-color + #003300; 
+    border-color: desaturate(@red, 10%); 
+}   
+</code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="top">TOP</div>
+        </div>
+    </main>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="./assets/js/common.js"></script>
+<script>
+    hljs.highlightAll();
+</script>
+</html>

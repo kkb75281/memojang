@@ -20,21 +20,14 @@
     <main id="main" class="main">
         <div class="container">
             <div class="left">
-                <!-- <div class="memo">
-                    node.js ; 터미널 내에서 바로바로 결과 확인 가능<br>
-                    https://nodejs.org/ 설치 후 터미널 내 node-v로 버전 체크
-                </div>
-                <div class="memo">
-                    console.log()로 객체 속에 무엇이 들어있는지 확인하는 습관
-                </div> -->
                 <nav class="leftMenu">
                     <ul>
                         <li><a href="./html.html">html</a></li>
                         <li><a href="./css.html">css</a></li>
                         <li><a href="./index.html">javascript</a></li>
-                        <li><a href="./webpack.html">webpack</a></li>
+                        <li><a href="./vue.html">vue</a></li>
                         <li class="active"><a href="./github.html">github</a></li>
-                        <li><a href="./memo.html">memo</a></li>
+                        <li><a href="./programmers.html">programmers</a></li>
                     </ul>
                 </nav>
             </div>
@@ -49,11 +42,11 @@
                         <h4>github</h4>
                     </div>
                     <ul class="topic">
-                        <li><a href="#cooperation">cooperation</a></li>
+                        <li mydata="cooperation">cooperation</li>
                     </ul>
                 </nav>
                 <div class="study">
-                    <section id="cooperation" class="section">
+                    <section id="cooperation" class="section active">
                         <h3>[ cooperation 협업하기 ]</h3>
                         <div class="desc" style="background-color: #4461f21b;">
                             <span>install extensions</span>
@@ -122,28 +115,9 @@
     </div>
 </body>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="./assets/js/common.js"></script>
 <script>
     hljs.highlightAll();
-
-    // 마우스 스크롤 내리면 top 버튼 올라오게
-    let goToTop = document.querySelector(".top");
-
-    window.onwheel = function (e) {
-        // console.log(e);
-
-        if (e.deltaY > 0) {
-            goToTop.style.bottom = '3vw';
-        } else {
-            goToTop.style.bottom = '-3vw';
-        }
-    }
-
-    goToTop.addEventListener("click", () => {
-        // window.scrollTo({ top:0, behavior:'smooth' });
-        window.scrollTo(0, 0);
-        goToTop.style.bottom = '-3vw';
-    });
-
 </script>
 
 </html>

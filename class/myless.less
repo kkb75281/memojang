@@ -1,0 +1,22 @@
+@shadowSettings: ~'3px 3px 6px red';
+
+body {
+    --shadow: red;
+}
+
+div {
+    box-shadow: @shadowSettings;
+    &::after {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: green;
+    }
+
+    & > span {
+        span {
+            color: red;
+        }
+    }
+}

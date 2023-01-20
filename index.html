@@ -20,21 +20,14 @@
     <main id="main" class="main">
         <div class="container">
             <div class="left">
-                <!-- <div class="memo">
-                    node.js ; 터미널 내에서 바로바로 결과 확인 가능<br>
-                    https://nodejs.org/ 설치 후 터미널 내 node-v로 버전 체크
-                </div>
-                <div class="memo">
-                    console.log()로 객체 속에 무엇이 들어있는지 확인하는 습관
-                </div> -->
                 <nav class="leftMenu">
                     <ul>
                         <li><a href="./html.html">html</a></li>
                         <li><a href="./css.html">css</a></li>
                         <li class="active"><a href="./index.html">javascript</a></li>
-                        <li><a href="./webpack.html">webpack</a></li>
+                        <li><a href="./vue.html">vue</a></li>
                         <li><a href="./github.html">github</a></li>
-                        <li><a href="./memo.html">memo</a></li>
+                        <li><a href="./programmers.html">programmers</a></li>
                     </ul>
                 </nav>
             </div>
@@ -49,23 +42,16 @@
                         <h4>javascript</h4>
                     </div>
                     <ul class="topic">
-                        <li><a href="#data">data</a></li>
-                        <li><a href="#function">function</a></li>
-                        <li><a href="#addEventListener">addEventListener</a></li>
-                        <li><a href="#objectReference">object reference</a></li>
-                        <li><a href="#class">class</a></li>
-                        <li><a href="#promise">promise</a></li>
-                        <li><a href="#getpost">get/post</a></li>
-                        <li><a href="#browserserver">web browser/server</a></li>
-
-                        <!-- <li id="data">data</li>
-                        <li id="function">function</li>
-                        <li id="addEventListener">addEventListener</li>
-                        <li id="objectReference">object reference</li>
-                        <li id="class">class</li>
-                        <li id="promise">promise</li>
-                        <li id="getpost">get/post</li>
-                        <li id="browserserver">web browser/server</li> -->
+                        <li mydata="data">data</li>
+                        <li mydata="function">function</li>
+                        <li mydata="addEventListener">addEventListener</li>
+                        <li mydata="objectReference">object reference</li>
+                        <li mydata="class">class</li>
+                        <li mydata="promise">promise</li>
+                        <li mydata="getpost">get/post</li>
+                        <li mydata="browserserver">web browser/server</li>
+                        <li mydata="webpack">webpack</li>
+                        <li mydata="npm">npm</li>
                     </ul>
                 </nav>
                 <div class="study">
@@ -464,6 +450,29 @@ http.createServer(function(request, response){
                             </div>
                         </div>
                     </section>
+                    <section id="webpack" class="section">
+                        <h3>[ webpack ]</h3>
+
+                        <div class="cont">
+                            <h4># what?</h4>
+                            <div class="desc">
+                                여러개 파일을 하나의 파일로 합쳐주는 모듈 번들러(Module bundler)
+                            </div>
+                        </div>
+                    </section>
+                    <section id="npm" class="section">
+                        <h3>[ npm ]</h3>
+
+                        <div class="cont">
+                            <h4># what?</h4>
+                            <div class="desc">
+                                자바스크립트 프로그래밍 언어를 위한 패키지 관리자, 쉽게 말하면 개발자들이 쓰는 앱스토어
+                            </div>
+                            <div class="desc">
+                                samsung(Galaxy Store), apple(App Store) 처럼 Python(pip), Ruby(gem) 등 다양함
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
             <div class="top">TOP</div>
@@ -471,49 +480,8 @@ http.createServer(function(request, response){
     </main>
 </body>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="./assets/js/common.js"></script>
 <script>
     hljs.highlightAll();
-
-
-
-    // 마우스 스크롤 내리면 top 버튼 올라오게
-    let goToTop = document.querySelector(".top");
-    
-    window.onwheel = function (e) {
-        // console.log(e);
-        
-        if(e.deltaY > 0){
-            goToTop.style.bottom = '3vw';
-        } else {
-            goToTop.style.bottom = '-5vw';
-        }
-    }
-
-    goToTop.addEventListener("click", () => {
-        // window.scrollTo({ top:0, behavior:'smooth' });
-        window.scrollTo(0,0);
-        goToTop.style.bottom = '-5vw';
-    });
-
-
-
-    // 소메뉴 클릭했을때 active 추가
-    let clickMenu = document.querySelectorAll(".topic li");
-    let showCont = document.querySelectorAll("section");
-
-
-    console.log(clickMenu[0].id);
-    console.log(showCont[0].id);
-
-
-    // clickMenu[0].addEventListener("click", () => {
-    //     let menu = document.getElementsByTagName('section')[0].id;
-    //     showCont.forEach((e) => {
-    //         e.classList.remove("active")
-    //     })
-    //     menu.classList.add("active");
-    // })
-
-
 </script>
 </html>

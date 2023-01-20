@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gyupp's memojang</title>
+
+    <link href="https://webfontworld.github.io/kohi/KOHINanum.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="./assets/css/programmers.css">
+</head>
+
+<body class="grid">
+    <header id="header" class="header">
+        <h1>memojang</h1>
+    </header>
+    <main id="main" class="main">
+        <div class="container">
+            <div class="left">
+                <nav class="leftMenu">
+                    <ul>
+                        <li><a href="./html.html">html</a></li>
+                        <li><a href="./css.html">css</a></li>
+                        <li><a href="./index.html">javascript</a></li>
+                        <li><a href="./vue.html">vue</a></li>
+                        <li><a href="./github.html">github</a></li>
+                        <li class="active"><a href="./programmers.html">programmers</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="right">
+                <nav class="rightMenu">
+                    <div class="page">
+                        <div class="btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <h4>programmers</h4>
+                    </div>
+                    <ul class="topic">
+                        <li mydata="level0">level 0</li>
+                        <li mydata="level1">level 1</li>
+                    </ul>
+                </nav>
+                <div class="study">
+                    <section id="level0" class="section pro active">   
+                        <h3>level 0 | 짝수 홀수 개수</h3> 
+                        <div class="cont">
+                            <!-- <h4>level 0 | 짝수 홀수 개수</h4> -->
+                            <p>정수가 담긴 리스트 num_list가 주어질 때, num_list의 원소 중 짝수와 홀수의 개수를 담은 배열을 return 하도록 solution 함수를 완성해보세요.</p>
+                            <div class="desc">
+                                1 ≤ num_list의 길이 ≤ 100<br>
+                                0 ≤ num_list의 원소 ≤ 1,000
+                            </div>
+                            <div class="code">
+                                <span class="pro">myAnswer</span>
+<pre><code class="language-js">function solution(num_list) {
+    var answer = [];
+    let a = [];
+    let b = [];
+
+    for (let num of num_list) {
+        if (num % 2 === 0) {
+            a.push(num);
+        } else {
+            b.push(num);
+        }
+    }
+
+    answer[0] = a.length;
+    answer[1] = b.length;
+
+    return answer;
+}
+</code></pre>
+                            </div>
+
+                            <div class="code">
+                                <span class="pro">others</span>
+<pre><code class="language-js">function solution(num_list) {
+    var answer = [0,0];
+
+    for(let a of num_list){
+        answer[a%2] += 1
+    }
+
+    return answer;
+}
+</code></pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="level1" class="section pro">    
+                        <div class="cont">
+                            <h4>level 1 | 짝수 홀수 개수</h4>
+                            <p>11111111111하도록 solution 함수를 완성해보세요.</p>
+                            <div class="desc">
+                                1 ≤ num_list의 길이 ≤ 100<br>
+                                0 ≤ num_list의 원소 ≤ 1,000
+                            </div>
+                            <div class="code">
+                                <span class="pro">myAnswer</span>
+<pre><code class="language-js">function solution(num_list) {
+    var answer = [];
+    let a = [];
+    let b = [];
+
+    for (let num of num_list) {
+        if (num % 2 === 0) {
+            a.push(num);
+        } else {
+            b.push(num);
+        }
+    }
+
+    answer[0] = a.length;
+    answer[1] = b.length;
+
+    return answer;
+}
+</code></pre>
+                            </div>
+
+                            <div class="code">
+                                <span class="pro">others</span>
+<pre><code class="language-js">function solution(num_list) {
+    var answer = [0,0];
+
+    for(let a of num_list){
+        answer[a%2] += 1
+    }
+
+    return answer;
+}
+</code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="top">TOP</div>
+        </div>
+    </main>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="./assets/js/common.js"></script>
+<script>
+    hljs.highlightAll();
+</script>
+</html>
