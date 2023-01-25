@@ -45,6 +45,18 @@ body {
     background-color: #999;
 }
 
+.code-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
+    margin: 0.5vw 0;
+}
+
+.code-flex .code {
+    width: 48%;
+}
+
 pre code.hljs {
     padding: 1.5vw !important;
     border-radius: 1vw !important;

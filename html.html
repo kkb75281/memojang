@@ -62,9 +62,13 @@
                             </div>
 
                             <h4># how?</h4>
-                            <div class="code">
-                                <span class="type">Pug</span>
-<pre><code class="language-ruby">doctype html
+                            <div class="desc">
+                                script처럼 다른 언어 사용시 뒤에 . 추가
+                            </div>
+                            <div class="code-flex">
+                                <div class="code">
+                                    <span class="type">Pug</span>
+<pre><code class="language-js">doctype html
 html(lang='en')
     head
     title Pug
@@ -83,13 +87,16 @@ html(lang='en')
         | templating language with a
         | strong focus on performance
         | and powerful features.
+
+
+
+
+
+
 </code></pre>
-                            </div>
-                            <div class="desc">
-                                script처럼 다른 언어 사용시 뒤에 . 추가
-                            </div>
-                            <div class="code">
-                                <span class="type">Html</span>
+                                </div>
+                                <div class="code">
+                                    <span class="type">Html</span>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
     &lt;head&gt;
@@ -116,6 +123,19 @@ html(lang='en')
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
+                                </div>
+                            </div>
+
+                            <h4># Attributes (속성)</h4>
+                            <div class="code-flex">
+                                <div class="code">
+                                    <span class="type">Pug</span>
+<pre><code class="language-js">a(href='google.com') Google</code></pre>
+                                </div>
+                                <div class="code">
+                                    <span class="type">Html</span>
+<pre><code class="language-html">&lt;a href="google.com"&gt;Google&lt;a&gt;</code></pre>
+                                </div>
                             </div>
                         </div>
                     </section>

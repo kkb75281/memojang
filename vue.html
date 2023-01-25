@@ -43,6 +43,7 @@
                     </div>
                     <ul class="topic">
                         <li mydata="install">install</li>
+                        <li mydata="apiPreference">API Preference</li>
                     </ul>
                 </nav>
                 <div class="study">
@@ -81,6 +82,92 @@ Done.
 <pre><code class="language-js">> npm install    // package.json 파일 내 프로그램 설치
 > npm run dev   // Local 주소 실행하기
 </code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="apiPreference" class="section">
+                        <h3>[ API Preference ]</h3>
+    
+                        <div class="cont">
+                            <div class="code">
+<pre><code class="language-html">&lt;template&gt;
+    &lt;div&gt;
+        &lt;!-- &lt;input type="text" v-model="userId"&gt; --&gt;
+        &lt;input type="text" :value="userId" @input="userId = $event.target.value"&gt;
+        &lt;button @click="myFunction"&gt;click&lt;/button&gt;      &lt;!-- @click = addEventListener("click", ()=>{}) --&gt;
+        &lt;button @click="changeData"&gt;change&lt;/button&gt;
+        &lt;br&gt;
+        &lt;input type="text" v-model="num1"&gt; +      &lt;!-- 문자열로 인식 --&gt;
+        &lt;input type="text" v-model="num2"&gt; =
+        &lt;span&gt;{{ num1 + num2 }}&lt;/span&gt;
+        &lt;br&gt;
+        &lt;input type="text" v-model.number="num3"&gt; +       &lt;!-- .number을 붙이면 숫자로 인식 --&gt;
+        &lt;input type="text" v-model.number="num4"&gt; =
+        &lt;span&gt;{{ num3 + num4 }}&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+                            </div>
+                            <div class="code-flex">
+                                <div class="code">
+                                    <span class="type">Composition</span>
+<pre><code class="language-js">&lt;script setup&gt;     // 컴포지션 방식에서는 setup 필수
+    import { ref, onMounted } from 'vue';
+
+    let userId = ref('abc');
+    let num1 = ref(0);
+    let num2 = ref(0);
+    let num3 = ref(0);
+    let num4 = ref(0);
+
+    function myFunction () {
+        console.log(userId.value);
+    }
+    
+    function changeData () {
+        userId.value = 'kyubi'
+    }
+
+    onMounted(() => {
+        ...     // template 내 html이 모두 다 불러와졌을 때 실행
+    })
+&lt;/script&gt;
+</code></pre>
+                                </div>
+                                <div class="code">
+                                    <span class="type">Options</span>
+<pre><code class="language-js">&lt;script&gt;
+    export default {
+        data () {
+            return {    // 모든 데이터는 여기에서 선언
+                userId: 'abcd',
+                num1: 0,
+                num2: 0,
+                num3: 0,
+                num4: 0,
+            }
+        },
+        methods: {      // 모든 함수는 여기에서 선언
+            myFunction () {
+                console.log(this.userId)
+            },
+            changeData () {
+                this.userId = 'kyubi'
+            }
+        }
+    }
+&lt;/script&gt;
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                Options 방식과는 달리 Composition 방식에서는 필요한 부분만 불러와서 사용
+                            </div>
+                            <div class="desc">
+                                반응형 데이터 만들기<br>
+                                ref | 범위 제한이 없음, 데이터 변경 시 .value를 붙여서 변경<br>
+                                reactive | obj,arr,Map,set 등 범위가 제한적, 데이터 변경 시 .value 붙일 필요 없음
                             </div>
                         </div>
                     </section>
