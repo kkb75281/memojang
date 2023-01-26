@@ -88,8 +88,8 @@ Done.
 
                     <section id="apiPreference" class="section">
                         <h3>[ API Preference ]</h3>
-    
                         <div class="cont">
+                            <h4># Composition / Options</h4>
                             <div class="code">
 <pre><code class="language-html">&lt;template&gt;
     &lt;div&gt;
@@ -168,6 +168,57 @@ Done.
                                 반응형 데이터 만들기<br>
                                 ref | 범위 제한이 없음, 데이터 변경 시 .value를 붙여서 변경<br>
                                 reactive | obj,arr,Map,set 등 범위가 제한적, 데이터 변경 시 .value 붙일 필요 없음
+                            </div>
+
+                            <h4># &lt;script setup&gt;</h4>
+                            <div class="code">
+                                <span class="type">vue</span>
+<pre><code class="language-js">// Basic Syntax
+&lt;template&gt;
+    &lt;button @click="log"&gt;{{ msg }}&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+    // variable
+    const msg = 'Hello!'
+    
+    // functions
+    function log() {
+      console.log(msg)
+    }
+&lt;/script&gt;
+</code></pre>
+                            </div>
+                            <div class="code">
+                                <span class="type">vue</span>
+<pre><code class="language-js">// Reactivity1
+&lt;template&gt;
+    &lt;button @click="count++"&gt;{{ count }}&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+    import { ref } from 'vue'
+    
+    let count = ref(0)
+&lt;/script&gt;
+
+// Reactivity2
+&lt;template&gt;
+    &lt;button @click="clickAdd"&gt;{{ count }}&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script setup&gt;
+    import { ref } from 'vue'
+    
+    let count = ref(0)
+    let clickAdd = () => {
+        count.value++;
+    }
+&lt;/script&gt;
+</code></pre>
+                            </div>
+                            <div class="desc">
+                                스크립트 안에서 값을 변경하기 위해서는 직접 .value 속성을 사용하여 바꿔야 함
                             </div>
                         </div>
                     </section>
